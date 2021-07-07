@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 	float directionX;
 	float directionY;
 	
+	public Animator animator;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +23,22 @@ public class PlayerController : MonoBehaviour
         directionX = Input.GetAxisRaw("Horizontal");
         directionY = Input.GetAxisRaw("Vertical");
         
+        // Set last turned location
+        if (directionX == 1 || directionX == -1 || directionY == 1 || directionY == -1) {
+    		animator.SetFloat("lastMoveX", directionX);
+			animator.SetFloat("lastMoveY", directionY);
+		}
+        
     	if ((Input.GetKey(KeyCode.LeftShift)) || (Input.GetKey(KeyCode.RightShift))) {
+    		animator.SetFloat("moveX", theRB.velocity.x);
+    		animator.SetFloat("moveY", theRB.velocity.y * 2f);
+
+    		
     		run();
     	} else {
+    		animator.SetFloat("moveX", theRB.velocity.x);
+    		animator.SetFloat("moveY", theRB.velocity.y);
+    		
     		walk();
     	}
     }
@@ -35,7 +50,6 @@ public class PlayerController : MonoBehaviour
     
     void run()
     {
-    	theRB.velocity = new Vector2(directionX * speed * 2f, directionY * speed);
-    	Debug.Log("run");
+    	theRB.velocity = new Vector2(directionX * speed * 2f, directionY * speed * 2f);
     }
 }
