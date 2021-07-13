@@ -28,7 +28,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.43, y: 1.25, z: -2.867928}
   m_LocalScale: {x: 1, y: 1.569375, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6569589240280497324}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -70,4 +71,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0e69b7221d34be1b4bfd3d7d72d149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaToLoad: SecondScene
+  areaToLoad: FirstScene
+  areaTransitionName: 
+--- !u!1 &6235102144165182593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6569589240280497324}
+  - component: {fileID: 3569686500935547313}
+  m_Layer: 0
+  m_Name: Area Entrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6569589240280497324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6235102144165182593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.56, y: 0.3019892, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5064553342437023869}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3569686500935547313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6235102144165182593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5c88729b0fadf218962a3a37f0285b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionName: Countryside-1

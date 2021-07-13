@@ -11,9 +11,20 @@ public class PlayerController : MonoBehaviour
 	
 	public Animator animator;
 	
+	public static PlayerController instance;
+	
+	public string areaTransitionName;
+	
     // Start is called before the first frame update
     void Start()
     {
+    	// If there is instance already destroy this
+    	if (instance == null) {
+    		instance = this;
+    	} else {
+    		Destroy(gameObject);
+    	}
+    	
 		DontDestroyOnLoad(gameObject);
     }
 
